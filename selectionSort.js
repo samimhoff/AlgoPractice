@@ -1,23 +1,15 @@
 function selectionSort(arr){
-	let swap = true;
-  let start = 0;
-  while (swap) {
-    swap = false;
-    let smallestI = start;
-  	for (let i = start+1; i < arr.length; i++) {
-      if (arr[i] < arr[smallestI]) {
-        smallestI = i;
-        swap=true;
+  const swap = (arr, idx1, idx2) =>
+    ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]]);
+	for (let i = 0; i < arr.length; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[lowest] > arr[j]) {
+        lowest = j;
       }
     }
-    if (start !== smallestI) {
-      let startVal = arr[start];
-      arr[start] === arr[smallestI];
-      arr[smallestI] = startVal;
-    }
-    start++;
+    if (i !== lowest) swap(arr, i, lowest);
   }
+
   return arr;
 }
-
-let arr1 = []

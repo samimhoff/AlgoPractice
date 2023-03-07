@@ -1,6 +1,7 @@
 /**
  * @param {number[]} arr
  * @return {boolean}
+ * https://leetcode.com/problems/check-if-n-and-its-double-exist/
  */
 var checkIfExist = function(arr) {
   let sortedArr = arr.sort((a,b) => a -b);
